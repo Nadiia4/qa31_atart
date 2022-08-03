@@ -64,12 +64,14 @@ public class PhonebookTests {
         WebElement inputEmail = list.get(0);
         WebElement inputPassword = list.get(1);
 
+        int index = (int)(System.currentTimeMillis()/1000)%3600;
+
         List <WebElement> listButton = wd.findElements(By.tagName("Button"));
         WebElement buttonRegistration = listButton.get(1);
 
         inputEmail.click();
         inputEmail.clear();
-        inputEmail.sendKeys("Lolita4@gmail.com");
+        inputEmail.sendKeys("Lolita4" + index + "@gmail.com");
 
         inputPassword.click();
         inputPassword.clear();
